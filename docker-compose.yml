@@ -8,6 +8,7 @@ services:
       context: elasticsearch/
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - esdata1:/usr/share/elasticsearch/data
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
@@ -45,3 +46,7 @@ services:
 networks:
   elk:
     driver: bridge
+
+volumes:
+  esdata1:
+   driver: local
