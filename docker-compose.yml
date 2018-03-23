@@ -11,6 +11,7 @@ services:
       - esdata1:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
+      - "9300:9300"
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
